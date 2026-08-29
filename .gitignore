@@ -1,0 +1,28 @@
+# Build outputs and executables
+build/
+dist/
+*.exe
+
+# Temporary files and test images
+tmp/
+/图示.jpg
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.env.*
+!.env.example
