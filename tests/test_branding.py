@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image
 from PySide6.QtWidgets import QApplication, QLabel
 
-from clt_helper.constants import APP_TITLE, VERSION_TEXT
+from clt_helper.constants import APP_TITLE, APP_VERSION, VERSION_TEXT
 from clt_helper.qt_application import CLTApplication
 
 
@@ -39,14 +39,14 @@ class BrandingTests(unittest.TestCase):
         with Image.open(ICON_PATH) as icon:
             self.assertEqual(set(icon.ico.sizes()), EXPECTED_ICON_SIZES)
 
-    def test_application_uses_beta_branding(self) -> None:
+    def test_application_uses_release_branding(self) -> None:
         qt_app = QApplication.instance() or QApplication([])
         window = CLTApplication()
         try:
             labels = {label.text() for label in window.findChildren(QLabel)}
-            self.assertEqual(APP_TITLE, "CLTassistant（Beta）")
+            self.assertEqual(APP_TITLE, "CLTassistant V1.0.1")
             self.assertEqual(window.windowTitle(), APP_TITLE)
-            self.assertIn("Beta", labels)
+            self.assertIn(f"V{APP_VERSION}", labels)
             self.assertIn(VERSION_TEXT, labels)
             qt_app.processEvents()
         finally:

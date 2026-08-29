@@ -21,7 +21,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='CLTassistant（Beta）',
+    name='CLTassistant-V1.0.1',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

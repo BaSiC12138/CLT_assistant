@@ -151,6 +151,8 @@ class StartupSplash(QWidget):
 
 
 class StartupSequence(QObject):
+    completed = Signal()
+
     def __init__(self, splash: StartupSplash, window: QMainWindow) -> None:
         super().__init__(window)
         self._splash = splash
@@ -188,3 +190,4 @@ class StartupSequence(QObject):
             raise RuntimeError("The main window closed before startup completed")
         self._window.setWindowOpacity(1.0)
         self._splash.close()
+        self.completed.emit()

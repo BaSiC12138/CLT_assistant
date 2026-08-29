@@ -14,6 +14,8 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from .constants import APP_VERSION
+
 
 class BrandMark(QWidget):
     def __init__(self, parent: QWidget | None = None) -> None:
@@ -68,7 +70,7 @@ class TitleBar(QFrame):
         title = QLabel("CLTassistant")
         title.setObjectName("AppTitle")
         layout.addWidget(title)
-        version = QLabel("Beta")
+        version = QLabel(f"V{APP_VERSION}")
         version.setObjectName("VersionBadge")
         layout.addWidget(version)
 
