@@ -7,7 +7,6 @@ from pathlib import Path
 APP_VERSION = "1.0.1"
 APP_TITLE = f"CLTassistant V{APP_VERSION}"
 VERSION_TEXT = f"CLTassistant V{APP_VERSION}"
-LATEST_RELEASE_API = "https://api.github.com/repos/BaSiC12138/CLT_assistant/releases/latest"
 WINDOW_LOGICAL_SIZE = (1440, 810)
 
 
